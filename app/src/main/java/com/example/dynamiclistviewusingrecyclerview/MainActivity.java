@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         nameList=new ArrayList<>();
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         nmeadaptor= new nameadaptor(this,nameList);
         recyclerView.setAdapter(nmeadaptor);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 nm.setEmail(myemail);
                 nm.setMobile(mymobile);
                 nameList.add(nm);
-
+                nmeadaptor.notifyDataSetChanged();
 
             }
         });
